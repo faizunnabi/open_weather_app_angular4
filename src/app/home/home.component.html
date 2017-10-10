@@ -1,0 +1,51 @@
+<div class="home-container">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="login">
+                    <a [routerLink]="['/login']"><img src="assets/img/image_login.png" width="80" /></a>
+                </div>
+                <div style="text-align:center;font-family: 'Ubuntu', sans-serif;">
+                    <br/><br/><br/><br/>
+                    <h1>
+                        Welcome to Weather Application
+                    </h1>
+                </div>
+                <br/><br/>
+                <div class="col-sm-4 col-sm-offset-4">
+                    <h3 style="text-align:center;">Find weather conditions for your city</h3>
+                    <br/>
+                    <hr/>
+                    <h5>Select your city from below</h5>
+
+                    <select class="form-control" (change)="getWeather($event.target.value)">
+                      <option value="" selected disabled>----------------Select your city----------------</option>
+                      <option value="abudhabi">Abu Dhabi</option>
+                      <option value="dubai">Dubai</option>
+                      <option value="sharjah">Sharjah</option>
+                      <option value="" disabled>----------------India----------------</option>
+                      <option value="newdelhi">New Delhi</option>
+                      <option value="kolkata">Kolkata</option>
+                      <option value="mumbai">Mumbai</option>
+                      <option value="chennai">Chennai</option>
+                      <option value="gaya">Gaya</option>
+                    </select>
+                    <br/>
+                    <div *ngIf="weather" style="text-align:center" class="weather-card">
+                        <div>
+                            <img [src]="weather.icon" width="100" />
+                            <h3>{{weather.description}}</h3>
+                        </div>
+                        <div>
+                            <h1>{{weather.temperature | number : '1.2'}} &deg;C</h1>
+                        </div>
+
+                        <div>
+                            <h5>Last Updated : {{weather.date_of_cal* 1000 | date:'dd-MM-yyyy , hh:mm a'}}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

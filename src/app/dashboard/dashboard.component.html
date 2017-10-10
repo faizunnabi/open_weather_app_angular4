@@ -1,0 +1,22 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="dashboard-container">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <br/><br/><br/><br/>
+                <div style="text-align:center">
+                    <h1>
+                        Welcome to {{title}}!
+                    </h1>
+                    <br/><br/><br/>
+                    <div>
+                        <img [src]="user.profile" class="img-responsive img-circle profile_pic" />
+                        <h2>{{user.fullname}}</h2>
+                        <h5>{{user.email}}</h5>
+                        <img src="assets/img/logout-48.png" class="logout_bt" width="25" height="20" (click)="logout()" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
